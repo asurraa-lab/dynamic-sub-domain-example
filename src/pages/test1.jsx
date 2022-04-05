@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import { getSubDomainFromLocation } from "../App";
 
 const Test1 = () => {
   const location = useLocation();
@@ -10,7 +11,8 @@ const Test1 = () => {
 
   return (
     <div>
-      123
+      your subdomain = {getSubDomainFromLocation()}
+      <br />
       <input
         onChange={(e) => {
           const value = e.target.value;
