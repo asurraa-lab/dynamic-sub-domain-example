@@ -1,8 +1,13 @@
 import { Fragment, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 
 const Test1 = () => {
+  const location = useLocation();
+  const param = useParams();
+  console.log("log", location, param);
   const [value, setValue] = useState("");
   const mainDomain = "krubkrong.app";
+
   return (
     <div>
       123
@@ -16,7 +21,7 @@ const Test1 = () => {
       <button
         onClick={() => {
           const sub = value;
-          window.location.replace("https://" + sub + "." + mainDomain);
+          window.location.replace("http://" + sub + "." + mainDomain);
         }}
       >
         redirect
